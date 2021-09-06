@@ -1,4 +1,4 @@
-module alfonsovgs/snippedbox
+module alfonsovgs/snippetbox
 
 go 1.16
 
