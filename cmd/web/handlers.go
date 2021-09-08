@@ -23,6 +23,8 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	data := &templateData{Snippets: s}
+
 	files := []string{
 		"./ui/html/home.page.tmpl",
 		"./ui/html/base.layout.tmpl",
@@ -35,7 +37,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = ts.Execute(w, s)
+	err = ts.Execute(w, data)
 	if err != nil {
 		app.serveError(w, err)
 	}
